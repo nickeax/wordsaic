@@ -7,6 +7,7 @@ const u = new Utils()
 const output = document.querySelector('#output')
 const kept = document.querySelector('#kept')
 const amount = document.querySelector('#amount')
+const clear = document.querySelector('#clear')
 
 const letters = new Letters(u)
 
@@ -17,6 +18,12 @@ amount.addEventListener('keyup', ev => {
     amount.value = isAllowed(amount.value)
     if(parseInt(amount.value) > 20) amount.value = 20
 })
+
+clear.addEventListener('click', ev => {
+    arr = []
+    kept.innerHTML = "nothing set asside yet"
+})
+kept.innerHTML = "nothing set asside yet"
 
 function isAllowed(chr) {
     console.log("isAllowed()", chr);
@@ -31,7 +38,7 @@ function isAllowed(chr) {
 function drawWords() {
     let tmp = ""
     tmpStr = ""
-    let amt = parseInt(amount.value) || 5
+    let amt = parseInt(amount.value) || 2
     console.log("amt", amt);
     for(let i = 0; i < amt; i++) {
         tmpStr += `${words[u.randomNumber(words.length)]} `
@@ -40,13 +47,15 @@ function drawWords() {
     output.innerHTML = tmp
 }
 
-setInterval(drawWords, 5000)
+//setInterval(drawWords, 5000)
 let masterArray = []
 document.addEventListener('keydown', ev => {
     let tmp = "<ul>"
     if(ev.keyCode == 32) {
         arr.push(tmpStr)
     }
+
+    if(ev.keyCode == 78) drawWords()
 
     let top = arr.pop() || ""
 

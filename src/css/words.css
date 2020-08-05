@@ -6,6 +6,7 @@
 }
 
 ul {
+    text-align: center;
     z-index: 999;
     width: 80%;
     margin: auto;
