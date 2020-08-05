@@ -1,0 +1,17 @@
+.word {
+    font-family: "Lemonada";
+    font-size: 2rem;
+    padding: 3px 0 0 6px;
+    /* color: var(--wordMainColour); */
+}
+
+ul {
+    z-index: 999;
+    width: 80%;
+    margin: auto;
+}
+
+li {
+    list-style: none;
+    padding-bottom: 0.5rem;
+}

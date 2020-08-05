@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/css/index.css">
-    <script src="./src/index.js" type='module' defer></script>
-    <title></title>
+    <script src="./src/js/index.js" type='module' defer></script>
+    <title>WORDSAIC</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="output" id="output"></div>
+        <div class="left">
+            <h2>PRESS THE SPACE BAR TO HOLD ONTO A SET OF WORDS</h2>
+            <label for="amount">
+                how many words?
+            </label>
+            <input type="text" id="amount" placeholder="default: 5      max: 20" autocomplete="off">
+            <div id="kept" class="kept">
+
+            </div>
+        </div>
+    </div>
 </body>
 </html>
